@@ -1,0 +1,377 @@
+
+<!DOCTYPE html>
+<html lang="vi" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>V-Safe - Trợ lý Lái xe An toàn</title>
+    
+    <!-- Tải Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Tải font Inter từ Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <script type="importmap">
+    {
+      "imports": {
+        "react/": "https://esm.sh/react@^19.1.1/"
+      }
+    }
+    </script>
+
+    <style>
+        /* Tùy chỉnh font chữ */
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #020617; /* Nền màu xanh đen đậm */
+        }
+        
+        /* Hiệu ứng chuyển màu cho chữ */
+        @keyframes gradient-animation {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+        .animated-gradient-text {
+            background: linear-gradient(to right, #22d3ee, #0ea5e9, #6366f1, #22d3ee);
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            animation: gradient-animation 5s ease infinite;
+        }
+
+        /* Hiệu ứng section lướt vào */
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="text-slate-300 antialiased">
+
+    <!-- Header -->
+    <header class="bg-slate-900/50 backdrop-blur-sm sticky top-0 z-50">
+        <nav class="container mx-auto px-6 py-4 flex justify-between items-center">
+            <a href="#" class="text-2xl font-bold text-white">
+                V<span class="animated-gradient-text">-Safe</span>
+            </a>
+            <div class="hidden md:flex space-x-8">
+                <a href="#features" class="hover:text-cyan-400 transition-colors">Tính năng</a>
+                <a href="#technology" class="hover:text-cyan-400 transition-colors">Công nghệ</a>
+                <a href="#survey" class="hover:text-cyan-400 transition-colors">Khảo sát</a>
+                <a href="#business-model" class="hover:text-cyan-400 transition-colors">Mô hình Kinh doanh</a>
+                <a href="#benefits" class="hover:text-cyan-400 transition-colors">Lợi ích</a>
+                <a href="#contact" class="hover:text-cyan-400 transition-colors">Liên hệ</a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Main Content -->
+    <main>
+
+        <!-- 1. Hero Section -->
+        <section class="fade-in-section relative text-center py-20 md:py-32 px-6 overflow-hidden">
+            <div class="absolute inset-0 bg-grid-slate-700/[0.05] bg-[bottom_1px_center] [mask-image:linear-gradient(to_bottom,transparent,black)]"></div>
+            <div class="container mx-auto relative">
+                <h1 class="text-4xl md:text-6xl font-extrabold text-white tracking-tight">
+                    V-Safe – Trợ lý An toàn Lái xe <br class="hidden md:block"> Cho <span class="animated-gradient-text">Học sinh và Cộng đồng</span>
+                </h1>
+                <p class="mt-6 max-w-3xl mx-auto text-lg md:text-xl text-slate-400">
+                    Giải pháp công nghệ AI chủ động giảm thiểu rủi ro, nâng cao ý thức và xây dựng thói quen lái xe văn minh ngay từ trên ghế nhà trường.
+                </p>
+                <div class="mt-8">
+                    <a href="#features" class="text-cyan-400 hover:text-cyan-300 text-lg font-medium transition-colors">
+                        Tìm hiểu thêm &darr;
+                    </a>
+                </div>
+                <div class="mt-16">
+                    <!-- === IMAGE UPDATED: Hình sử dụng (Placeholder) === -->
+                    <img src="https://live.staticflickr.com/65535/54743527488_2a88fdae8a_w.jpg" alt="Học sinh sử dụng xe đạp an toàn với V-Safe tại cột đèn giao thông" class="rounded-2xl shadow-2xl shadow-cyan-500/10 mx-auto max-w-full h-auto md:max-w-3xl">
+                </div>
+            </div>
+        </section>
+
+        <!-- 2. Vấn đề thực tiễn -->
+        <section class="fade-in-section py-20 px-6 bg-slate-900">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Thực trạng <span class="animated-gradient-text">đáng báo động</span></h2>
+                <p class="mt-4 max-w-2xl mx-auto text-slate-400">Tai nạn giao thông liên quan đến xe hai bánh vẫn diễn biến phức tạp, đặc biệt với nhóm đối tượng dễ bị tổn thương nhất.</p>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-3 gap-8">
+                    <div class="bg-slate-800 p-8 rounded-xl">
+                        <h3 class="text-4xl font-bold animated-gradient-text">75%</h3>
+                        <p class="mt-2 text-slate-300">Vụ tai nạn liên quan đến xe máy, xe đạp điện.</p>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-xl">
+                        <h3 class="text-4xl font-bold animated-gradient-text">Top 3</h3>
+                        <p class="mt-2 text-slate-300">Nguyên nhân: Vượt đèn đỏ, quên xi nhan, thiếu quan sát.</p>
+                    </div>
+                    <div class="bg-slate-800 p-8 rounded-xl">
+                        <h3 class="text-4xl font-bold animated-gradient-text">Học sinh</h3>
+                        <p class="mt-2 text-slate-300">Là nhóm đối tượng có nguy cơ cao do thiếu kinh nghiệm và kỹ năng.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 3. Giải pháp V-Safe -->
+        <section class="fade-in-section py-20 px-6">
+            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Giải pháp từ <span class="animated-gradient-text">V-Safe</span></h2>
+                    <p class="mt-4 text-lg text-slate-400">V-Safe ra đời với sứ mệnh trang bị một "trợ lý ảo" thông minh, giúp người lái xe hai bánh an toàn hơn thông qua cảnh báo tức thời và xây dựng phản xạ tích cực.</p>
+                    <p class="mt-4 text-slate-400">Không chỉ là một thiết bị, V-Safe còn là một công cụ giáo dục thực tiễn, giúp học sinh hình thành thói quen tuân thủ luật giao thông, tạo ra một thế hệ tham gia giao thông văn minh và an toàn.</p>
+                </div>
+                <div>
+                     <!-- === IMAGE UPDATED: Hình thiết bị (Placeholder) === -->
+                     <img src="https://live.staticflickr.com/65535/54742465462_41764c6b6b_n.jpg" alt="Hình ảnh cận cảnh thiết bị V-Safe thông minh" class="rounded-2xl shadow-lg">
+                </div>
+            </div>
+        </section>
+
+        <!-- 4. Tính năng nổi bật -->
+        <section id="features" class="fade-in-section py-20 px-6 bg-slate-900">
+            <div class="container mx-auto">
+                <div class="text-center mb-12">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Tính năng <span class="animated-gradient-text">nổi bật</span></h2>
+                    <p class="mt-4 max-w-2xl mx-auto text-slate-400">Tích hợp những công nghệ tiên tiến nhất để bảo vệ bạn trên mọi hành trình.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white">Nhận diện đèn tín hiệu</h3>
+                        <p class="mt-2 text-slate-400">Camera AI cảnh báo khi bạn sắp vượt đèn đỏ, giúp bạn dừng lại đúng lúc.</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white">Tự động bật/tắt xi nhan</h3>
+                        <p class="mt-2 text-slate-400">Cảm biến IMU phát hiện hướng rẽ và tự động bật xi nhan, tránh việc quên báo hiệu.</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white">Cảnh báo va chạm</h3>
+                        <p class="mt-2 text-slate-400">Cảm biến khoảng cách đo lường và cảnh báo nếu bạn quá gần xe phía trước/sau.</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white">Phát hiện lạng lách</h3>
+                        <p class="mt-2 text-slate-400">Phân tích dao động bất thường để cảnh báo hành vi lái xe nguy hiểm, mất tập trung.</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white">Chấm điểm an toàn</h3>
+                        <p class="mt-2 text-slate-400">Ghi lại hành trình và phân tích hành vi để đưa ra điểm số và gợi ý cải thiện.</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white">Tích hợp năng lượng sạch</h3>
+                        <p class="mt-2 text-slate-400">Hoạt động bền bỉ nhờ pin sạc và tấm pin năng lượng mặt trời thân thiện môi trường.</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white">Cá nhân hóa cảnh báo</h3>
+                        <p class="mt-2 text-slate-400">Học máy phân tích thói quen lái xe để đưa ra ngưỡng cảnh báo phù hợp với từng người dùng.</p>
+                    </div>
+                    <div class="bg-slate-800 p-6 rounded-lg">
+                        <h3 class="text-xl font-semibold text-white">Phát hiện tai nạn & SOS</h3>
+                        <p class="mt-2 text-slate-400">Khi có va chạm mạnh, thiết bị tự động gửi tín hiệu SOS đến các số liên lạc khẩn cấp.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 5. Cấu tạo & Công nghệ -->
+        <section id="technology" class="fade-in-section py-20 px-6">
+            <div class="container mx-auto grid md:grid-cols-2 gap-12 items-center">
+                 <div>
+                     <img src="https://live.staticflickr.com/65535/54743660970_b21b039fe1_c.jpg" alt="Sơ đồ công nghệ V-Safe minh họa kết nối giữa AI, cảm biến và người dùng" class="rounded-2xl shadow-lg bg-white p-4">
+                </div>
+                <div class="text-left">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Công nghệ <span class="animated-gradient-text">đột phá</span></h2>
+                    <p class="mt-4 text-lg text-slate-400">V-Safe là sự kết hợp của các linh kiện phần cứng mạnh mẽ và thuật toán thông minh.</p>
+                    <ul class="mt-6 space-y-4 text-slate-300">
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">&#10003;</span><strong>Bộ xử lý trung tâm:</strong> ESP32-C3 nhỏ gọn, mạnh mẽ hoặc Raspberry Pi Zero cho phiên bản nâng cấp.</li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">&#10003;</span><strong>Camera AI:</strong> Nhận diện đèn giao thông và biển báo.</li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">&#10003;</span><strong>Cảm biến đa dạng:</strong> IMU, siêu âm/radar, GPS theo dõi toàn diện hành vi và môi trường.</li>
+                        <li class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">&#10003;</span><strong>Cảnh báo đa dạng:</strong> Đèn, còi và motor rung giúp người lái nhận biết nguy hiểm mà không bị phân tâm.</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+        
+        <!-- Survey Results Section -->
+        <section id="survey" class="fade-in-section py-20 px-6 bg-slate-900">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Lắng nghe từ <span class="animated-gradient-text">Cộng đồng</span></h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-slate-400">Kết quả khảo sát trên 79 người dùng tại Vũng Tàu và trực tuyến, nhằm thấu hiểu nhu cầu và định hướng phát triển sản phẩm V-Safe.</p>
+                </div>
+
+                <div class="space-y-20">
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-6 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" /></svg>Thông tin người tham gia</h3>
+                            <div class="space-y-4">
+                                <div class="bg-slate-800 p-4 rounded-lg flex items-center justify-between"><span>Giới tính:</span> <span class="font-bold text-white">42 Nữ / 34 Nam</span></div>
+                                <div class="bg-slate-800 p-4 rounded-lg flex items-center justify-between"><span>Độ tuổi chính:</span> <span class="font-bold text-white">53 người &lt; 18 tuổi</span></div>
+                                <div class="bg-slate-800 p-4 rounded-lg flex items-center justify-between"><span>Phương tiện chính:</span> <span class="font-bold text-white">46 Xe máy & 15 Xe máy điện</span></div>
+                            </div>
+                        </div>
+                        <div>
+                            <h3 class="text-2xl font-semibold text-white mb-6 flex items-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" /></svg>Tính năng được mong đợi nhất</h3>
+                            <div class="space-y-3">
+                                <div class="bg-slate-800 p-4 rounded-lg"><strong>1. Cảnh báo va chạm trước/sau</strong> (62 lượt chọn)</div>
+                                <div class="bg-slate-800 p-4 rounded-lg"><strong>2. Cảnh báo điểm mù & xe vượt</strong> (59 lượt chọn)</div>
+                                <div class="bg-slate-800 p-4 rounded-lg"><strong>3. Cảnh báo mất tập trung</strong> (54 lượt chọn)</div>
+                                <div class="bg-slate-800 p-4 rounded-lg"><strong>4. Nhận diện đèn & biển báo</strong> (45 lượt chọn)</div>
+                                <div class="bg-slate-800 p-4 rounded-lg"><strong>5. Tự động gọi cứu hộ</strong> (44 lượt chọn)</div>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-8 text-center flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 5a1 1 0 011-1h14a1 1 0 011 1v2a1 1 0 01-1 1H5a1 1 0 01-1-1V5zM4 13a1 1 0 011-1h6a1 1 0 011 1v6a1 1 0 01-1 1H5a1 1 0 01-1-1v-6zM16 13a1 1 0 011-1h2a1 1 0 011 1v6a1 1 0 01-1 1h-2a1 1 0 01-1-1v-6z" /></svg>Thiết kế & Mức giá mong muốn</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                            <div class="bg-slate-800 p-6 rounded-lg text-center">
+                                <h4 class="text-xl font-bold text-white">Mẫu A: Gắn tay lái</h4>
+                                <p class="text-cyan-400 text-3xl font-bold my-3">38</p>
+                                <p class="text-slate-400">lượt chọn - Ưa chuộng nhất</p>
+                            </div>
+                            <div class="bg-slate-800 p-6 rounded-lg text-center">
+                                <h4 class="text-xl font-bold text-white">Mức giá phù hợp</h4>
+                                <p class="text-cyan-400 text-2xl font-bold my-3">500k - 1.5tr</p>
+                                <p class="text-slate-400">là khoảng giá đa số chấp nhận</p>
+                            </div>
+                            <div class="bg-slate-800 p-6 rounded-lg text-center">
+                                <h4 class="text-xl font-bold text-white">Mẫu B: Tích hợp gương</h4>
+                                <p class="text-cyan-400 text-3xl font-bold my-3">23</p>
+                                <p class="text-slate-400">lượt chọn - Tiềm năng</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h3 class="text-2xl font-semibold text-white mb-8 text-center flex items-center justify-center"><svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 mr-3 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4" /></svg>Đánh giá chung & Khuyến nghị</h3>
+                        <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div class="bg-slate-800 p-6 rounded-lg">
+                                <h4 class="text-xl font-semibold text-white mb-4">Phản hồi tích cực</h4>
+                                <div class="flex items-center text-lg mb-2"><span class="text-green-400 mr-3">&#10003;</span> 69/79 người đánh giá ý tưởng 'Khá tốt' hoặc 'Rất tốt'.</div>
+                                <div class="flex items-center text-lg"><span class="text-green-400 mr-3">&#10003;</span> 72/79 người 'Có thể' hoặc 'Chắc chắn sẽ' sử dụng/giới thiệu.</div>
+                            </div>
+                            <div class="bg-slate-800 p-6 rounded-lg">
+                                <h4 class="text-xl font-semibold text-white mb-4">Đề xuất phát triển</h4>
+                                <div class="flex items-start mb-2"><span class="text-cyan-400 mr-3 mt-1">&#8594;</span> Ưu tiên mẫu gắn tay lái (Model A) cho xe máy.</div>
+                                <div class="flex items-start"><span class="text-cyan-400 mr-3 mt-1">&#8594;</span> Tập trung vào các tính năng cảnh báo va chạm, điểm mù.</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 6. Business Model Canvas -->
+        <section id="business-model" class="fade-in-section py-20 px-6">
+            <div class="container mx-auto">
+                <div class="text-center mb-16">
+                    <h2 class="text-3xl md:text-4xl font-bold text-white">Mô hình Kinh doanh <span class="animated-gradient-text">Canvas</span></h2>
+                    <p class="mt-4 max-w-3xl mx-auto text-slate-400">Xây dựng một tương lai giao thông bền vững, an toàn hơn cho cộng đồng bắt đầu từ thế hệ trẻ.</p>
+                </div>
+                <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                    <!-- Customer Segments -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283-.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0z"/></svg><h3 class="text-xl font-semibold text-white ml-3">Phân khúc khách hàng</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Học sinh, sinh viên.</li><li>Phụ huynh.</li><li>Trường học & đơn vị giáo dục.</li><li>Người đi xe hai bánh khác.</li></ul>
+                    </div>
+                    <!-- Value Propositions -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v13m0-13V6a2 2 0 112 2h-2zm0 0V5.5A2.5 2.5 0 109.5 8H12zm-7 4h14M5 12a2 2 0 110-4h14a2 2 0 110 4M5 12v7a2 2 0 002 2h10a2 2 0 002-2v-7"/></svg><h3 class="text-xl font-semibold text-white ml-3">Giá trị đề xuất</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Thiết bị an toàn đa chức năng.</li><li>Giải pháp giáo dục thực tiễn.</li><li>Nền tảng dữ liệu & cá nhân hóa.</li><li>Sản phẩm bền vững, thân thiện.</li></ul>
+                    </div>
+                    <!-- Channels -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 16V6a1 1 0 00-1-1H4a1 1 0 00-1 1v10l2-2h8a1 1 0 001-1zM21 11.5l-2-2.5-2 2.5M21 11.5h-4"/></svg><h3 class="text-xl font-semibold text-white ml-3">Kênh phân phối</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Hợp tác với trường học, Sở GD.</li><li>Kênh online: Website, MXH.</li><li>Đại lý xe, cửa hàng công nghệ.</li></ul>
+                    </div>
+                    <!-- Customer Relationships -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z"/></svg><h3 class="text-xl font-semibold text-white ml-3">Quan hệ khách hàng</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Xây dựng cộng đồng.</li><li>Tổ chức đào tạo & workshop.</li><li>Thu thập phản hồi & cải tiến.</li></ul>
+                    </div>
+                    <!-- Revenue Streams -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8c-1.657 0-3 .895-3 2s1.343 2 3 2 3 .895 3 2-1.343 2-3 2m0-8c1.11 0 2.08.402 2.599 1M12 8V7m0 1v.01M12 12v-2m0 2v.01M12 12v-2m0 2h.01M12 12h-2m2 0h.01M12 12h-2m2 0v.01M12 12v-2m2 2h.01M14 12h-2m2 0h.01M10 12h2m0 0v.01M10 12v-2m0 2h.01M10 12h-2m2 0h.01M10 12h-2m2 0v.01M10 12v-2m-2 2h.01M8 12h2m0 0v.01M8 12v-2m0 2h.01M8 12h-2m2 0h.01M8 12h-2m2 0v.01M8 12v-2m-2 2h.01M6 12h2m0 0v.01M6 12v-2m0 2h.01M6 12h-2m2 0h.01M6 12h-2"/></svg><h3 class="text-xl font-semibold text-white ml-3">Nguồn thu</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Bán thiết bị (B2C, B2B).</li><li>Phí dịch vụ dữ liệu (SaaS).</li><li>Hợp đồng giáo dục.</li><li>Cấp phép công nghệ (Licensing).</li></ul>
+                    </div>
+                    <!-- Key Resources -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10.325 4.317c.426-1.756 2.924-1.756 3.35 0a1.724 1.724 0 002.573 1.066c1.543-.94 3.31.826 2.37 2.37a1.724 1.724 0 001.065 2.572c1.756.426 1.756 2.924 0 3.35a1.724 1.724 0 00-1.066 2.573c.94 1.543-.826 3.31-2.37 2.37a1.724 1.724 0 00-2.572 1.065c-.426 1.756-2.924 1.756-3.35 0a1.724 1.724 0 00-2.573-1.066c-1.543.94-3.31-.826-2.37-2.37a1.724 1.724 0 00-1.065-2.572c-1.756-.426-1.756-2.924 0-3.35a1.724 1.724 0 001.066-2.573c-.94-1.543.826-3.31 2.37-2.37.996.608 2.296.07 2.572-1.065z"/><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 12a3 3 0 11-6 0 3 3 0 016 0z"/></svg><h3 class="text-xl font-semibold text-white ml-3">Nguồn lực chính</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Phần cứng & Cảm biến.</li><li>Phần mềm & Thuật toán AI.</li><li>Nhân sự R&D, chuyên gia.</li><li>Đối tác trường học.</li></ul>
+                    </div>
+                    <!-- Key Activities -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-3 7h3m-3 4h3m-6-4h.01M9 16h.01"/></svg><h3 class="text-xl font-semibold text-white ml-3">Hoạt động chính</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Nghiên cứu & phát triển (R&D).</li><li>Thử nghiệm & cải tiến sản phẩm.</li><li>Tổ chức chương trình giáo dục.</li><li>Hợp tác thương mại hóa.</li></ul>
+                    </div>
+                    <!-- Key Partnerships -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M15 21v-2a6 6 0 00-12 0v2"/></svg><h3 class="text-xl font-semibold text-white ml-3">Đối tác chính</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Trường học các cấp.</li><li>Cơ quan quản lý giao thông, GD.</li><li>Nhà sản xuất, phân phối.</li><li>Hãng xe, tổ chức phi lợi nhuận.</li></ul>
+                    </div>
+                    <!-- Cost Structure -->
+                    <div class="bg-slate-800 p-6 rounded-xl flex flex-col">
+                        <div class="flex items-center mb-4"><svg class="h-8 w-8 text-cyan-400" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 14l6-6m-5.5.5h.01m4.99 5h.01m-5.5-.5h.01m4.99 5h.01M9 14l6-6m-6 6h.01M9 14l6-6m-6 6h.01M9 14l6-6M3.272 15.228c-.243.242-.48.492-.702.742A2.25 2.25 0 004 20h16a2.25 2.25 0 002.43-3.03c-.222-.25-.459-.5-.702-.742M20.728 8.772c.243-.242.48-.492.702-.742A2.25 2.25 0 0019.07 5H4.93a2.25 2.25 0 00-2.43 3.03c.222.25.459.5.702.742"/></svg><h3 class="text-xl font-semibold text-white ml-3">Cơ cấu chi phí</h3></div>
+                        <ul class="space-y-2 text-slate-400 list-disc list-inside flex-grow"><li>Chi phí R&D.</li><li>Chi phí sản xuất & gia công.</li><li>Chi phí triển khai giáo dục.</li><li>Chi phí marketing & hậu mãi.</li><li>Chi phí hạ tầng dữ liệu.</li></ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 7. Lợi ích & Tác động -->
+        <section id="benefits" class="fade-in-section py-20 px-6 bg-slate-900">
+            <div class="container mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Giá trị <span class="animated-gradient-text">V-Safe</span> mang lại</h2>
+                <div class="mt-12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-white">An toàn hơn</h3>
+                        <p class="mt-2 text-slate-400">Giảm thiểu tai nạn, hỗ trợ phản xạ kịp thời.</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-white">Giáo dục tốt hơn</h3>
+                        <p class="mt-2 text-slate-400">Rèn luyện ý thức tuân thủ luật giao thông từ sớm.</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-white">Tiết kiệm hơn</h3>
+                        <p class="mt-2 text-slate-400">Chi phí hợp lý, sử dụng năng lượng sạch, bền vững.</p>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="text-xl font-semibold text-white">Linh hoạt hơn</h3>
+                        <p class="mt-2 text-slate-400">Dễ dàng lắp đặt trên nhiều loại xe hai bánh.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 8. Kêu gọi hành động / Liên hệ -->
+        <section id="contact" class="fade-in-section py-20 px-6 text-center bg-slate-800">
+            <div class="container mx-auto">
+                <h2 class="text-3xl md:text-4xl font-bold text-white">Chung tay vì một tương lai <span class="animated-gradient-text">giao thông an toàn</span></h2>
+                <p class="mt-4 max-w-2xl mx-auto text-slate-400">Hãy cùng V-Safe tạo ra sự thay đổi. Đăng ký để nhận thông tin mới nhất, tham gia chương trình thử nghiệm hoặc trở thành đối tác của chúng tôi.</p>
+                <div class="mt-8">
+                    <a href="mailto:contact@vsafe.example.com" class="bg-cyan-500 hover:bg-cyan-600 text-white font-semibold py-3 px-8 rounded-full transition-transform hover:scale-105">
+                        Liên hệ ngay
+                    </a>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-slate-900 border-t border-slate-800">
+        <div class="container mx-auto px-6 py-8 text-center text-slate-400">
+            <p>&copy; 2024 V-Safe. All rights reserved.</p>
+            <p class="text-sm mt-2">Một sản phẩm vì cộng đồng.</p>
+        </div>
+    </footer>
+
+    <script type="module" src="./index.tsx"></script>
+</body>
+</html>
